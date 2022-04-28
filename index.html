@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navbar{
+            display: flex;
+            width: 100%;
+            height: 35px;
+            /* border: 2px solid red; */
+            justify-content: space-between;
+            padding-top: 7px;
+            /* margin-bottom: 30px; */
+            background-color: rgb(63, 63, 63);
+            margin-bottom: 30px;
+            /* position: fixed; */
+            box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+        }
+        #searchReault{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 40px;
+            width: 89%;
+            margin: auto;
+            /* height: 200px; */
+            /* overflow:scroll; */
+        }
+        #searchReault >div{
+            display: flex;
+            flex-direction: column;
+            /* align-items: center; */
+            justify-content: center;
+            height:250PX ;
+            position: relative;
+            box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        }
+        #searchReault >div img{
+            width:100%;
+            height: 180px;
+        }
+        /* body{
+            background-color:rgb(24,24,24) ;
+        } */
+        p{
+            color: rgb(0, 0, 0);
+            font-size: 12px;
+            text-align: left;
+            margin-top: 7px 0;
+            /* margin-left: 0; */
+            font-family:"Roboto","Arial",sans-serif;
+        }
+        #searchicon,#bar{
+        color: white;
+        height: 12px;
+        /* padding: 3px; */
+      }
+      input{
+          padding: 5px;
+          width: 300px;
+          border-radius: 4px;
+          border: 1px solid rgb(155, 155, 155);
+      }
+      button{
+          padding: 3.5px 15px;
+          /* border: 2px solid ; */
+          box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+      }
+      #logo{
+        height: 30px;
+      }
+      img{
+          color:white;
+          /* background-color: beige; */
+          /* width: 100%; */
+        height: 25px;
+      }
+      #navbar >div{
+         color:white;
+          
+      }
+
+      /* body{
+          background-color: rgb(14, 13, 13);
+      } */
+      #homeicon {
+          padding: 0 40px;
+          display: flex;
+      }
+      #option{
+          display: flex;
+      }
+      #option div{
+          margin: 0 20px;
+      }
+      #ytlogo{
+          display: flex;
+          margin-left: 40px;
+      }
+      h3{
+          margin-top: 2px;
+          color: black;
+      }
+      body{
+          background-color: rgb(68, 69, 70);
+      }
+      #itemdiv{
+        display: flex;
+        width: 100%;
+      }
+      #sidebar{
+          width: 12%;
+          background-color: rgb(75, 73, 73);
+          margin-right: 1%;
+          padding: 20px 10px;
+          box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+          padding-right: 40px;
+      }
+      .sideitem{
+          display: flex;
+          
+      }
+      .sideitem h3{
+          margin-left: 30px;
+      }
+    </style>
+    
+</head>
+<body>
+    <!-- get the data  -->
+    <div id="navbar">
+       <div id="homeicon"><img src="https://cdn-icons-png.flaticon.com/512/966/966313.png" alt=""><div id="ytlogo"><img src="https://cdn-icons-png.flaticon.com/512/226/226236.png" alt=""><h3>YouTube</h3></div></div>
+       
+    <div id="search">   
+    <input type="text" id="searchterm" placeholder="Search veadio">
+    <button onclick="search()"><img src="https://cdn-icons.flaticon.com/png/512/3031/premium/3031293.png?token=exp=1644691275~hmac=f71b7a692af89a0395af9fea81cd2f2a" alt="" id="searchicon"></button>
+    </div> 
+    <div id="option">
+        <div><img src="https://cdn-icons-png.flaticon.com/512/4366/4366461.png" alt=""></div>
+
+        <div><img src="https://cdn-icons.flaticon.com/png/512/3129/premium/3129122.png?token=exp=1644692624~hmac=a06b80c0c44075ff8e46e50d4882a0dd" alt=""></div>
+
+        
+
+        <div><img src="https://cdn-icons-png.flaticon.com/512/2645/2645897.png" alt=""></div>
+        <div><img src="https://cdn-icons-png.flaticon.com/512/64/64572.png" alt=""></div>
+    </div>
+    </div>
+    <!-- display the data -->
+    <div id="itemdiv">
+        <div id="sidebar">
+            <div class="sideitem"><img src="https://cdn-icons-png.flaticon.com/512/709/709537.png" alt=""><h3>Home</h3></div>
+
+            <div class="sideitem"><img src="https://cdn-icons-png.flaticon.com/512/565/565504.png" alt=""> <h3>Explore</h3></div>
+
+            <div class="sideitem"> <img src="https://cdn-icons.flaticon.com/png/512/2989/premium/2989849.png?token=exp=1644699380~hmac=00c0b700f5cfcac075e695b6513650b1" alt=""> <h3>Subscription</h3></div>
+
+            <div class="sideitem"><img src="https://cdn-icons.flaticon.com/png/512/3669/premium/3669443.png?token=exp=1644699467~hmac=59251ffa2f6149299ccfd788233071a0" alt=""> <h3>Library</h3></div>
+
+            <div class="sideitem"><img src="https://cdn-icons.flaticon.com/png/512/2961/premium/2961948.png?token=exp=1644699541~hmac=f0583d524cf69815f1cf224708c58090" alt=""><h3>History</h3></div>
+
+            <div class="sideitem"><img src="https://cdn-icons-png.flaticon.com/512/748/748134.png" alt=""> <h3>Your vedios</h3></div>
+
+            <div class="sideitem"><img src="https://cdn-icons-png.flaticon.com/512/2088/2088617.png" alt=""><h3>Watch Letter</h3></div>
+        </div>
+        <div id="searchReault">
+
+        </div>
+
+    </div>
+    <!--whayt is my end poient   -->
+</body>
+</html>
+<script>
+    let Api="AIzaSyB8VJCixsE862-BqnN-CCTNy5Md1Xtz3Ns";
+    let searchReaultDiv =document.getElementById("searchReault");
+
+// get the data from server 
+ const search= async()=>{
+     try{
+
+        let userinput=document.getElementById("searchterm").value;
+
+     let res=await fetch(`https://youtube.googleapis.com/youtube/v3/search?maxResults=30&q=${userinput}&part=snippet&type=video&key=${Api}`);
+
+     let data = await res.json();
+
+     console.log(data);
+    let vediolist =data.items;
+
+    displaydata(vediolist);
+
+
+     }catch (err){
+         console.log(err);
+     }
+ }
+
+   const popular=async ()=>{
+       try{
+           let vediodata =await fetch(`https://youtube.googleapis.com/youtube/v3/search?maxResults=30&q=trending&part=snippet&type=video&key=${Api}`)
+        let vlist= await vediodata.json();
+        let vedioarr=vlist.items;
+        displaydata(vedioarr);
+       }catch(err){
+           console.log("err",err);
+       }
+   }
+
+   popular();
+
+ const displaydata = (vediolist)=>{
+     //[{},{},{}]
+     searchReaultDiv.innerHTML=null;
+
+    // <iframe width="560" height="315" src="https://www.youtube.com/embed/A66TYFdz8YA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    //
+    //  console.log(vediolist)
+     vediolist.forEach(element => {
+       
+        // useing destructure function for getting exect thing
+        const {
+            id:{videoId},
+            snippet:{channelTitle},
+            snippet:{title},
+            
+            default:url
+        }=element;
+
+        // console.log(url)
+        console.log(element)
+
+        let vediocart =document.createElement("div");
+
+        let iFrame =document.createElement("iframe");
+        iFrame.src=`https://www.youtube.com/embed/${videoId}`;
+        iFrame.setAttribute("allowfullscreen",true);
+
+        let thumbnel =document.createElement("img");
+        thumbnel.src=element.snippet.thumbnails.default.url;
+
+        let vtitle =document.createElement("p");
+         vtitle.textContent=channelTitle;
+         let description=document.createElement("p");
+         description.textContent=title;
+
+        vediocart.append(thumbnel,vtitle,description);
+        vediocart.addEventListener("click",() =>{
+            let url =videoId;
+            localStorage.setItem("vediofrem",(JSON.stringify(url)));
+            window.location.href="show.html";
+        })
+
+        searchReaultDiv.append(vediocart);
+     });
+    //  creat an ifrem;
+    // geting vedio id we gona embed the youtube data in or application
+
+
+
+ }
+
+</script>
+<script src="/index.js"></script>
